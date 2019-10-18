@@ -4,21 +4,27 @@ import List from "./list/List";
 import ListItem from "./list/ListItem";
 
 class Settings extends Component {
+    filterByCategory = (category) => {
+        return this.props.sites.filter(site => (site.category === category));
+    };
+
     render() {
         return (
             <div>
                 <div className="row">
-                    <div className="col-3">
-                        <Card title={"This Title"}>
-                            <List>
-                                <ListItem>Onetwo</ListItem>
-                                <ListItem>3242</ListItem>
-                                <ListItem>dfgdg</ListItem>
-                                <ListItem>dsf</ListItem>
-                                <ListItem>this issss</ListItem>
-                            </List>
-                        </Card>
-                    </div>
+                    {this.props.categories.map((category, index) => (
+                        <div className="col-md-3" key={index}>
+                            <Card title={category}>
+                                <List>
+                                    {this.filterByCategory(category).map(site => (
+                                        <ListItem checked={this.props.selectedSites.includes(site.url)}
+                                                  updateSites={this.props.updateSites} key={site.url}
+                                                  site={site}>{site.name}</ListItem>
+                                    ))}
+                                </List>
+                            </Card>
+                        </div>
+                    ))}
                 </div>
             </div>
         );
