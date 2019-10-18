@@ -1,0 +1,16 @@
+export const data = {
+    "categories": [
+        "general",
+        "php",
+        "javascript",
+        "css"
+    ],
+    "sites": [
+        {
+            "name": "StackOverflow",
+            "url": "stackoverflow.com",
+            "logo": "https://stackoverflow.com/logo.png",
+            "categories": "general"
+        }
+    ]
+};
