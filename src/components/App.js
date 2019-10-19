@@ -73,6 +73,15 @@ class App extends Component {
         window.open(searchUrl + searchQuery, "_blank");
     };
 
+
+    componentDidMount() {
+        fetch("https://source.unsplash.com/daily?nature")
+            .then(res=>{
+                let body = document.getElementsByTagName("body")[0];
+                body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url("${res.url}")`;
+            });
+    }
+
     render() {
         return (
             <div className="App">
