@@ -9,7 +9,7 @@ const ListItem = (props) => {
                        checked={props.checked}
                        name={props.site.name + "_check"}/>
                 <label className="custom-control-label" htmlFor={props.site.name + "_check"}>
-                    <img src={props.site.logo} className="rounded-circle" style={{width: '19px', marginRight: '4px'}}
+                    <img src={props.site.logo} className="rounded-circle" style={{width: '20px', marginRight: '4px'}}
                          alt="logo"/>
                     {props.children}
                 </label>

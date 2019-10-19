@@ -28,8 +28,8 @@ export const data = {
         {
             name: "Unsplash",
             url: "unsplash.com",
-            logo: "https://www.php.net/images/logos/php-logo.svg",
-            category: "php"
+            logo: "https://unsplash.com/a/img/marketing/press-symbol.svg",
+            category: "design"
         },
     ]
 };

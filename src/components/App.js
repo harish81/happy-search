@@ -26,17 +26,32 @@ class App extends Component {
         this.setState({selectedSite: [...siteUrls]});
     };
     changeSearch = (e) => {
+        const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        fetch(proxyurl + "https://clients1.google.com/complete/search?hl=en&output=toolbar&q=" + e.target.value)
+            .then(res => {
+                return res.text();
+            }).then(res => {
+            let xml = (new window.DOMParser()).parseFromString(res, "text/xml");
+            let suggestions = [];
+            let suggestNodes = xml.getElementsByTagName("suggestion");
+            for (let i=0;i<suggestNodes.length;i++){
+                suggestions.push(suggestNodes[i].getAttribute("data"));
+            }
+            //console.log(suggestions);
+        }).catch(err => {
+            console.log(err);
+        });
         this.setState({searchTerm: e.target.value})
     };
     changeCategory = (e) => {
         let cat = e.target.value;
-        if(cat!=-1) {
+        if (cat != -1) {
             let sites = this.state.sites.filter(site => {
                 return site.category === cat || site.category === 'general';
             });
             sites = sites.map(site => site.url);
             this.setState({selectedSite: sites});
-        }else{
+        } else {
             this.setState({selectedSite: []});
         }
     };

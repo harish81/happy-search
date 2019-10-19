@@ -11,19 +11,17 @@ class Settings extends Component {
     render() {
         return (
             <div>
-                <div className="row">
+                <div className="card-columns">
                     {this.props.categories.map((category, index) => (
-                        <div className="col-md-3" key={index}>
-                            <Card title={category}>
-                                <List>
-                                    {this.filterByCategory(category).map(site => (
-                                        <ListItem checked={this.props.selectedSites.includes(site.url)}
-                                                  updateSites={this.props.updateSites} key={site.url}
-                                                  site={site}>{site.name}</ListItem>
-                                    ))}
-                                </List>
-                            </Card>
-                        </div>
+                        <Card title={category} key={index}>
+                            <List>
+                                {this.filterByCategory(category).map(site => (
+                                    <ListItem checked={this.props.selectedSites.includes(site.url)}
+                                              updateSites={this.props.updateSites} key={site.url}
+                                              site={site}>{site.name}</ListItem>
+                                ))}
+                            </List>
+                        </Card>
                     ))}
                 </div>
             </div>
