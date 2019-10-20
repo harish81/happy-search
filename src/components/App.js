@@ -25,29 +25,29 @@ class App extends Component {
 
         this.setState({selectedSite: [...siteUrls]});
     };
-    changeSearch = (e) => {
+    changeSearch = (val) => {
         const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        fetch(proxyurl + "https://clients1.google.com/complete/search?hl=en&output=toolbar&q=" + e.target.value)
+        fetch(proxyurl + "https://clients1.google.com/complete/search?hl=en&output=toolbar&q=" + val)
             .then(res => {
                 return res.text();
             }).then(res => {
             let xml = (new window.DOMParser()).parseFromString(res, "text/xml");
             let suggestions = [];
             let suggestNodes = xml.getElementsByTagName("suggestion");
-            for (let i=0;i<suggestNodes.length;i++){
+            for (let i = 0; i < suggestNodes.length; i++) {
                 suggestions.push(suggestNodes[i].getAttribute("data"));
             }
             //console.log(suggestions);
         }).catch(err => {
             console.log(err);
         });
-        this.setState({searchTerm: e.target.value})
+        this.setState({searchTerm: val})
     };
     changeCategory = (e) => {
         let cat = e.target.value;
         if (cat != -1) {
             let sites = this.state.sites.filter(site => {
-                return site.category === cat || site.category === 'general';
+                return site.category === cat;
             });
             sites = sites.map(site => site.url);
             this.setState({selectedSite: sites});
@@ -64,6 +64,9 @@ class App extends Component {
                     searchQuery += "site:" + this.state.selectedSite.join();
                 searchUrl = "https://duckduckgo.com/?q=";
                 break;
+            case "devdocs":
+                searchUrl = "https://devdocs.io/#q=";
+                break;
             default:
                 searchQuery += this.state.selectedSite.map(url => 'site:' + url).join(" OR ");
                 searchUrl = "https://www.google.com/search?q=";
@@ -76,7 +79,7 @@ class App extends Component {
 
     componentDidMount() {
         fetch("https://source.unsplash.com/daily?nature")
-            .then(res=>{
+            .then(res => {
                 let body = document.getElementsByTagName("body")[0];
                 body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url("${res.url}")`;
             });

@@ -5,7 +5,8 @@ export const data = {
         "laravel",
         "javascript",
         "css",
-        "design"
+        "design",
+        "codeigniter"
     ],
     sites: [
         {
@@ -17,6 +18,12 @@ export const data = {
         {
             name: "GitHub",
             url: "github.com",
+            logo: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+            category: "general"
+        },
+        {
+            name: "GitHub Gist",
+            url: "gist.github.com",
             logo: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
             category: "general"
         },
@@ -49,6 +56,18 @@ export const data = {
             url: "flaticon.com",
             logo: "https://res-2.cloudinary.com/toolmuse/image/upload/v1468858840/production_flaticon_id63n1.png",
             category: "design"
+        },
+        {
+            name: "The Noun Project",
+            url: "thenounproject.com",
+            logo: "https://upload.wikimedia.org/wikipedia/commons/8/85/The_Noun_Project_logo.svg",
+            category: "design"
+        },
+        {
+            name: "CodeIgniter",
+            url: "codeigniter.com",
+            logo: "https://codeigniter.com/assets/images/ci-logo-big.png",
+            category: "codeigniter"
         },
     ]
 };

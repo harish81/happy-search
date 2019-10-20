@@ -29,6 +29,17 @@ class Engine extends Component {
                         </label>
                     </div>
                 </li>
+                <li className="list-group-item">
+                    <div className="custom-control custom-radio">
+                        <input type="radio" className="custom-control-input" name="search_engine" id="search_engine_devdocs" value="devdocs"
+                               onChange={this.updateSearchEngine} checked={this.props.engine==='devdocs'}/>
+                        <label className="custom-control-label" htmlFor="search_engine_devdocs">
+                            <img src="https://cdn.devdocs.io/images/apple-icon-72.png" className="rounded-circle"
+                                 style={{width: '19px', marginRight: '4px'}} alt="logo"/>
+                            DevDocs
+                        </label>
+                    </div>
+                </li>
             </ul>
         );
     }
