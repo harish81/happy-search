@@ -9,7 +9,9 @@ import {data} from "./util/data";
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {...data, searchEngine: 'google', selectedSite: [], searchTerm: '', showSettings: false};
+        let datas = data;
+        datas.categories.sort();
+        this.state = {...datas, searchEngine: 'google', selectedSite: [], searchTerm: '', showSettings: false};
     }
 
     updateSearchEngine = (engine) => {
@@ -26,26 +28,11 @@ class App extends Component {
         this.setState({selectedSite: [...siteUrls]});
     };
     changeSearch = (val) => {
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        fetch(proxyurl + "https://clients1.google.com/complete/search?hl=en&output=toolbar&q=" + val)
-            .then(res => {
-                return res.text();
-            }).then(res => {
-            let xml = (new window.DOMParser()).parseFromString(res, "text/xml");
-            let suggestions = [];
-            let suggestNodes = xml.getElementsByTagName("suggestion");
-            for (let i = 0; i < suggestNodes.length; i++) {
-                suggestions.push(suggestNodes[i].getAttribute("data"));
-            }
-            //console.log(suggestions);
-        }).catch(err => {
-            console.log(err);
-        });
         this.setState({searchTerm: val})
     };
     changeCategory = (e) => {
         let cat = e.target.value;
-        if (cat != -1) {
+        if (cat !== -1) {
             let sites = this.state.sites.filter(site => {
                 return site.category === cat;
             });

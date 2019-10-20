@@ -6,7 +6,8 @@ export const data = {
         "javascript",
         "css",
         "design",
-        "codeigniter"
+        "codeigniter",
+        "android"
     ],
     sites: [
         {
@@ -68,6 +69,24 @@ export const data = {
             url: "codeigniter.com",
             logo: "https://codeigniter.com/assets/images/ci-logo-big.png",
             category: "codeigniter"
+        },
+        {
+            name: "MDN Javascript",
+            url: "developer.mozilla.org/en-US/docs/Web/JavaScript",
+            logo: "https://upload.wikimedia.org/wikipedia/commons/6/67/Firefox_Logo%2C_2017.svg",
+            category: "javascript"
+        },
+        {
+            name: "MDN CSS",
+            url: "developer.mozilla.org/en-US/docs/Web/CSS",
+            logo: "https://upload.wikimedia.org/wikipedia/commons/6/67/Firefox_Logo%2C_2017.svg",
+            category: "css"
+        },
+        {
+            name: "Android Developers",
+            url: "developer.android.com",
+            logo: "https://developer.android.com/images/robot-tiny.png",
+            category: "android"
         },
     ]
 };
