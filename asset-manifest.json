@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/happy-search/static/css/main.2e90e0e5.chunk.css",
+    "main.js": "/happy-search/static/js/main.2dc95ded.chunk.js",
+    "main.js.map": "/happy-search/static/js/main.2dc95ded.chunk.js.map",
+    "runtime-main.js": "/happy-search/static/js/runtime-main.6a56f671.js",
+    "runtime-main.js.map": "/happy-search/static/js/runtime-main.6a56f671.js.map",
+    "static/js/2.12e9d802.chunk.js": "/happy-search/static/js/2.12e9d802.chunk.js",
+    "static/js/2.12e9d802.chunk.js.map": "/happy-search/static/js/2.12e9d802.chunk.js.map",
+    "index.html": "/happy-search/index.html",
+    "precache-manifest.81f1c00359c762a3363f1281e5392d0a.js": "/happy-search/precache-manifest.81f1c00359c762a3363f1281e5392d0a.js",
+    "service-worker.js": "/happy-search/service-worker.js",
+    "static/css/main.2e90e0e5.chunk.css.map": "/happy-search/static/css/main.2e90e0e5.chunk.css.map",
+    "static/media/logo.png": "/happy-search/static/media/logo.ed6d4eb2.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6a56f671.js",
+    "static/js/2.12e9d802.chunk.js",
+    "static/css/main.2e90e0e5.chunk.css",
+    "static/js/main.2dc95ded.chunk.js"
+  ]
+}
