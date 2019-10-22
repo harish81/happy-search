@@ -34,8 +34,7 @@ class SearchBox extends Component {
 
     onPressEnter = (event)=>{
         if (event.keyCode === 13) {
-            if(document.querySelector(".react-autosuggest__suggestions-container--open")===null)
-                this.props.onSearch();
+            this.props.onSearch();
         }
     };
 
