@@ -1,4 +1,6 @@
-# Happy Search(Beta)
+<p align="center"><img src="src/logo.png" width="100"/></p>
+<h1 align="center">Happy Search(Beta)</h1>
+
 A Happy Search for developers.
 
 **https://harish81.github.io/happy-search**
